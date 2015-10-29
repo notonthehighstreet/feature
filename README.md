@@ -18,7 +18,32 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+`Feature` can be configured using your applications initialization block:
+
+```@ruby
+Feature.configure do |config|
+  config.features = YourFeatureHash || {}
+  config.feature_thresholds = YourFeatureThresholdHash || {}
+  config.whitelist = YourWhitelistArray || []
+  config.abbreviations = YourAbbreviationHash || {}
+end
+```
+
+### Features
+
+The main usage of `Feature` is after setting `features` in the config block, `enabled?` can be used to check the boolean state of any feature. This is augmented in several ways:
+
+### Feature thresholds
+
+Feature thresholds allows us to segment traffic for a feature, so we can have (e.g.) category filters in the search page for 10% of traffic. In order to use this, simply set the following in feature_thresholds: `{search_category_filters: 0.1}`. The 0.1 represents the 10% of people who will get "true" for this feature.
+
+### Whitelist
+
+Whitelist is fairly straighforward; This is an array of features that can be configured and overridden separately to normal features. This is done with the aim of supporting parameter overrides of particular features.
+
+### Abbreviations
+
+Abbreviations simply allow for a simpler way to reference long feature keys; for example you might set it to `{longkey: ludicrously_over_needed_giant_key_example_yo}` to allow for easier use.
 
 ## Contributing
 
