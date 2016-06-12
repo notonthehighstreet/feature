@@ -7,7 +7,7 @@ describe Feature::Decision, :type => :model do
   let(:approval) { "Approval" }
   let(:value)    { "Value" }
 
-  describe ".new with no arguements" do
+  describe ".new with no arguments" do
     subject { described_class.new }
 
     it("has a nil name")     { expect(subject.name).to     be_nil }
