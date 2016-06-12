@@ -30,7 +30,7 @@ require "feature/always_false"
 #    deploy.
 #
 # The majority of the implementation refers to a specific feature being set as
-# a Decision.  So stored_cards: false and stored_cards: true are two seperate
+# a Decision.  So stored_cards: false and stored_cards: true are two separate
 # "decisions".  This is very loose and needs better definition and
 # documentation around it.
 #
